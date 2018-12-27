@@ -10,14 +10,14 @@ steps:
 - task: Npm@1
   displayName: 'npm install'
   inputs:
-    workingDir: TripTime
+    workingDir: trip-time
     verbose: false
 
 - task: Npm@1
   displayName: 'npm build'
   inputs:
     command: custom
-    workingDir: TripTime
+    workingDir: trip-time
     verbose: true
     customCommand: 'run build'
 
@@ -26,6 +26,6 @@ steps:
   displayName: 'npm test'
   inputs:
     command: custom
-    workingDir: TripTime
+    workingDir: trip-time
     verbose: true
     customCommand: 'run test'
