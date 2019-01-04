@@ -22,10 +22,10 @@ steps:
     customCommand: 'run build'
 
 
-- task: Npm@1
-  displayName: 'npm test'
-  inputs:
-    command: custom
-    workingDir: ./
-    verbose: true
-    customCommand: 'run test'
+#- task: Npm@1
+#  displayName: 'npm test'
+#  inputs:
+#    command: custom
+#    workingDir: ./
+#    verbose: true
+#    customCommand: 'run test'
