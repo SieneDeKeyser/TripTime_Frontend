@@ -1,0 +1,17 @@
+<div class="login-container">
+        <form [formGroup]="userForm" (ngSubmit)="isValid() && login()">
+          <mat-form-field class="inputfieldLogin">
+            <input matInput formControlName="email" type="text" placeholder="Enter your email address"  [ngClass]="{'is-invalid': submitted && formValues.email.errors}" />
+              <mat-error *ngIf="submitted && formValues.email.invalid.email" >Email not correct format</mat-error>
+              <mat-error *ngIf="submitted && formValues.email.invalid.required" >Email required</mat-error>
+          </mat-form-field>
+          <mat-form-field class="inputfieldLogin">
+            <input matInput formControlName="password" type="password" placeholder="Enter your password" [ngClass]="{'is-invalid': submitted && formValues.password.errors}"/>
+            <mat-error *ngIf="submitted && formValues.password.invalid" >Password required</mat-error>
+          </mat-form-field>
+          <div class="action">
+          <button type="submit" id='loginButton' class="btnSave" mat-raised-button>Login</button>
+          <button class="btnRegister" routerLink='/admins' mat-raised-button>Register Admin</button>
+        </div>
+        </form>
+  </div>

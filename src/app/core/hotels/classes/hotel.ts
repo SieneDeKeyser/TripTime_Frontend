@@ -1,4 +1,4 @@
-import {Address} from '../Address/address'
+import {Address} from '../../Address/address'
 
 export class Hotel{
     id?: string;

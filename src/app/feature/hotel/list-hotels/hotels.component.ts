@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hotel } from 'src/app/core/Hotels/hotel';
-import { HotelService } from 'src/app/core/Hotels/hotel.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import { HotelService } from 'src/app/core/hotels/services/hotel.service';
+import { Hotel } from 'src/app/core/hotels/classes/hotel';
 
 @Component({
   selector: 'app-hotel',

@@ -1,0 +1,53 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.login-container > * {
+    width: 100%;
+}
+
+.login-container .inputfieldLogin {
+ display: block;
+}
+
+.action {
+    margin-top: 2%;
+    text-align: center;
+}
+
+button {
+    color: white;
+    margin-right: 1%;
+    /*display: flex;
+     justify-content: center;
+    left: 50%;*/ 
+}
+
+.btnSave {
+    background-color: rgb(53, 168, 53);
+}
+
+.btnCancel {
+    background-color: rgb(168, 53, 53);
+}
+
+.btnRegister
+{
+    background-color: rgb(135, 67, 204);
+}
+
+button:hover {
+    opacity: 0.9;
+    left: 0.1%;
+}
+
+@media screen and (max-width: 900px) {
+    .login-container {
+        display: block;
+        padding: 0;
+    }
+}

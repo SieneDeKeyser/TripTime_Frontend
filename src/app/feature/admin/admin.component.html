@@ -1,0 +1,32 @@
+<div class="adminCreation-container">
+  <header>
+    <h3>Create new admin: <span>{{admin.firstName}}</span></h3>
+  </header>
+  <form [formGroup]="createNewAdminForm" (ngSubmit)="isValid() && saveNewAdmin()">
+    <mat-form-field class="inputfieldAdmin">
+      <input matInput type="text" placeholder="Enter your firstname" formControlName="firstName" [(ngModel)]="admin.firstName" [ngClass]="{'is-invalid': submitted && formValues.firstName.errors}">
+      <mat-error *ngIf="formValues.firstName.invalid && submitted">firstname is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="inputfieldAdmin">
+      <input matInput type="text" placeholder="Enter your lastname" formControlName="lastName" [ngClass]="{'is-invalid': submitted && formValues.lastName.errors}">
+      <mat-error *ngIf="formValues.lastName.invalid && submitted">lastname is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="inputfieldAdmin" formGroupName="loginDTO">
+      <input matInput formControlName="email" type="text" placeholder="Enter your email address" [ngClass]="{'is-invalid': submitted && formValues.loginDTO.controls['email'].errors}" />
+      <mat-error *ngIf="submitted && formValues.loginDTO.controls['email'].invalid.email">Email not correct format</mat-error>
+      <mat-error *ngIf="submitted && formValues.loginDTO.controls['email'].invalid.required">Email required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="inputfieldAdmin" formGroupName="loginDTO">
+      <input matInput formControlName="password" type="password" placeholder="Enter your password" [ngClass]="{'is-invalid': submitted && formValues.loginDTO.controls['password'].errors}" />
+      <mat-error *ngIf="submitted && formValues.loginDTO.controls['password'].invalid.required">Password required</mat-error>
+    </mat-form-field>
+
+    <div class="action">
+      <button class="btnSave" type="submit" mat-raised-button>SAVE</button>
+      <button class="btnCancel" (click)="cancel()" mat-raised-button>CANCEL</button>
+    </div>
+  </form>
+</div>

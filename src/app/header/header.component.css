@@ -1,0 +1,11 @@
+.active-nav-item{
+    color: rgb(135, 67, 204);
+}
+mat-toolbar{
+    padding: 2%;
+    font-size: 150%;
+}
+
+.btnNav{
+    font-size: 87%;
+}

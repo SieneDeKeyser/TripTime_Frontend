@@ -1,0 +1,50 @@
+.hotelCreation-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  }
+
+  .hotelCreation-container h4 {
+    margin-block-end: 0;
+  }
+
+  .hotelCreation-container > * {
+    width: 100%;
+  }
+  .hotelCreation-container .inputHotelAddress{
+    width: 18%;
+    padding-right: 2%;
+  }
+
+  .hotelCreation-container .inputfieldHotel{
+    display: block;
+  }
+
+  .action{
+    margin-top: 2%;
+  }
+
+  button {
+    color: white;
+    margin-right: 1%;
+  }
+
+  .btnSave{
+    background-color: rgb(53, 168, 53);
+  }
+
+  .btnCancel {
+    background-color: rgb(168, 53, 53);
+  }
+  button:hover {
+    opacity: 0.9;
+    left: 0.1%;
+}
+
+@media screen and (max-width: 900px) {
+  .hotelCreation-container .inputHotelAddress{
+   display: block;
+   width: 100%;
+   padding: 0;
+  }
+}

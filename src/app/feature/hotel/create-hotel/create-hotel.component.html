@@ -1,0 +1,45 @@
+<div class="hotelCreation-container">
+  <header>
+    <h3>Create new hotel</h3>
+  </header>
+  <form [formGroup]="createNewHotelForm" (ngSubmit)="isValid() && saveNewHotel()">
+    <mat-form-field class="inputfieldHotel">
+      <input matInput type="text" placeholder="Enter name of the hotel" formControlName="name" [ngClass]="{'is-invalid': submitted && formValues.name.errors}">
+      <mat-error *ngIf="formValues.name.invalid && submitted">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="inputfieldHotel">
+      <input matInput type="text" placeholder="Enter Website of the hotel" formControlName="website" [ngClass]="{'is-invalid': submitted && formValues.website.errors}">
+      <mat-error *ngIf="formValues.website.invalid && submitted">website is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="inputfieldHotel">
+      <input matInput type="text" placeholder="Enter contact person of the hotel" formControlName="contactPerson"
+        [ngClass]="{'is-invalid': submitted && formValues.contactPerson.errors}">
+      <mat-error *ngIf="formValues.contactPerson.invalid && submitted">Contact person is required</mat-error>
+    </mat-form-field>
+    <h4>Address</h4>
+    <mat-form-field formGroupName="address" class="inputHotelAddress">
+      <input matInput type="text" placeholder="Enter Country" formControlName="country" [ngClass]="{'is-invalid': submitted && formValues.address.controls['country'].errors}">
+      <mat-error *ngIf="formValues.address.controls['country'].invalid && submitted">Country is required</mat-error>
+    </mat-form-field>
+    <mat-form-field formGroupName="address" class="inputHotelAddress">
+      <input matInput type="text" placeholder="Enter Zipcode" formControlName="zipCode" [ngClass]="{'is-invalid': submitted && formValues.address.controls['zipCode'].errors}">
+      <mat-error *ngIf="formValues.address.controls['zipCode'].invalid && submitted">Zipcode is required</mat-error>
+    </mat-form-field>
+    <mat-form-field formGroupName="address" class="inputHotelAddress">
+      <input matInput type="text" placeholder="Enter cityname" formControlName="city" [ngClass]="{'is-invalid': submitted && formValues.address.controls['city'].errors}">
+      <mat-error *ngIf="formValues.address.controls['city'].invalid && submitted">City is required</mat-error>
+    </mat-form-field>
+    <mat-form-field formGroupName="address" class="inputHotelAddress">
+      <input matInput type="text" placeholder="Enter streetname" formControlName="streetName" [ngClass]="{'is-invalid': submitted && formValues.address.controls['streetName'].errors}">
+      <mat-error *ngIf="formValues.address.controls['streetName'].invalid && submitted">streetname is required</mat-error>
+    </mat-form-field>
+    <mat-form-field formGroupName="address" class="inputHotelAddress">
+      <input matInput type="text" placeholder="Enter streetnumber" formControlName="streetNumber" [ngClass]="{'is-invalid': submitted && formValues.address.controls['streetNumber'].errors}">
+      <mat-error *ngIf="formValues.address.controls['streetNumber'].invalid && submitted">Streetnumber is required</mat-error>
+    </mat-form-field>
+    <div class="action">
+      <button class="btnSave" type="submit" mat-raised-button>SAVE</button>
+      <button class="btnCancel" (click)="cancel()" mat-raised-button>CANCEL</button>
+    </div>
+  </form>
+</div>

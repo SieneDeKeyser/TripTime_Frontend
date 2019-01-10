@@ -1,0 +1,51 @@
+.adminCreation-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.adminCreation-container h4 {
+    margin-block-end: 0;
+  }
+
+.adminCreation-container > * {
+    width: 100%;
+}
+
+.adminCreation-container .inputfieldAdmin {
+    display: block;
+}
+
+.action {
+    margin-top: 2%;
+    text-align: center;
+}
+
+button {
+    color: white;
+    margin-right: 1%;
+    /*display: flex;
+     justify-content: center;
+    left: 50%;*/ 
+}
+
+.btnSave {
+    background-color: rgb(53, 168, 53);
+}
+
+.btnCancel {
+    background-color: rgb(168, 53, 53);
+}
+
+
+button:hover {
+    opacity: 0.9;
+    left: 0.1%;
+}
+
+@media screen and (max-width: 900px) {
+    .login-container {
+        display: block;
+        padding: 0;
+    }
+}
