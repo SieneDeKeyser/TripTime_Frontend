@@ -1,6 +1,6 @@
 export class AuthenticatedUser {
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
     id?: string;
     email: string;
 }

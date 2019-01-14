@@ -19,7 +19,7 @@ export class AuthenticationService {
   }
 
   public isAuthenticated(): boolean {
-    const token= localStorage.getItem('token');
+    const token= localStorage.getItem('tokenInfo') || localStorage.getItem('token');
     if(token)
     {
       return !this.jwtHelper.isTokenExpired(token);
@@ -28,10 +28,10 @@ export class AuthenticationService {
   };
 
   login(user: User){
-    return this.httpClient.post<string>(`${Urls.urlAuthentication}authenticate`, user)
+    return this.httpClient.post<any>(`${Urls.urlAuthentication}authenticate`, user)
       .pipe(map(returnToken => {
         if (returnToken){
-          localStorage.setItem('token', returnToken);
+          localStorage.setItem('token', returnToken['token']);
         }
         return returnToken;
       }));
@@ -43,6 +43,7 @@ export class AuthenticationService {
 
   logOut(){
     localStorage.removeItem('token');
+    localStorage.removeItem('tokenInfo');
   }
 
 }

@@ -1,10 +1,13 @@
 <nav>
-  <mat-toolbar>
+  <mat-toolbar *ngIf="authenticationService.isAuthenticated() && currentUser">
+    <div class="navigationBtns">
       <button class="btnNav" routerLink="/hotels" routerLinkActive="active-nav-item" mat-button>
-      Hotels
+        Hotels
       </button>
-    <button mat-button class="btnNav">
-      Test
-    </button>
+      <button mat-button class="btnNav">
+        Test
+      </button>
+    </div>
+    <div class="personal-container"><span>signed-in as: {{currentUser.firstName}} {{currentUser.lastName}}</span></div>
   </mat-toolbar>
 </nav>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/core/Authentication/Services/authentication.service';
+import { AuthenticationService } from 'src/app/core/authentication/services/authentication.service';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { User } from 'src/app/core/authentication/classes/user';
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.logOut();
     this.userForm = this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -31,6 +32,10 @@ export class LoginComponent implements OnInit {
   get formValues(){
     return this.userForm.controls;
   }
+
+logOut(){
+  this.authenticationService.logOut();
+}
 
   isValid():boolean {
     this.submitted = true;
@@ -45,7 +50,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.userForm.value)
         .pipe(first())
         .subscribe(data => {
-          console.log(data);
+          this.router.navigateByUrl('/hotels');
         });
   }
 

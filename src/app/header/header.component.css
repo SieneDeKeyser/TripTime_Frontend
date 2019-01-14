@@ -9,3 +9,16 @@ mat-toolbar{
 .btnNav{
     font-size: 87%;
 }
+
+.personal-container{
+    font-size: 75%;
+    width: 25%;
+}
+
+.personal-container span {
+    float: right;
+}
+
+.navigationBtns{
+    width: 75%;
+}
